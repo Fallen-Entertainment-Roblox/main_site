@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator & Developer Showcase | Fallen Games & Friends</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        darkBg: '#0b0f19',
+                        darkCard: '#111827',
+                        neonRed: '#ff2a5f',
+                        neonPurple: '#a855f7',
+                        neonCyan: '#06b6d4',
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 25px -5px rgba(168, 85, 247, 0.4)',
+                        'red-glow': '0 0 25px -5px rgba(255, 42, 95, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and glassmorphism styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans min-h-screen flex flex-col antialiased selection:bg-neonPurple selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonRed via-neonPurple to-neonCyan p-[2px]">
+                    <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center">
+                        <i data-lucide="youtube" class="w-5 h-5 text-neonRed"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+                        NEXUS CREATORS
+                    </span>
+                    <span class="block text-[10px] text-neonCyan font-mono tracking-widest uppercase">Dev & Gaming Hub</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#channels" class="text-sm font-medium text-gray-300 hover:text-neonCyan transition-colors">Channels</a>
+                <a href="#community" class="text-sm font-medium text-gray-300 hover:text-neonCyan transition-colors">Community Hub</a>
+                <a href="#github-deploy" class="text-xs font-mono px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-700 hover:border-neonPurple text-neonPurple transition-all">
+                    GitHub Pages Guide
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-4 overflow-hidden border-b border-gray-800/60">
+            <!-- Background Radial Glows -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neonPurple/20 blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="absolute top-1/3 left-1/4 w-[400px] h-[200px] bg-neonRed/15 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neonPurple/10 border border-neonPurple/30 text-neonPurple text-xs font-semibold uppercase tracking-wider mb-6">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>Official Creator Showcase</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                    Explore Game Devs & <br>
+                    <span class="bg-gradient-to-r from-neonRed via-neonPurple to-neonCyan bg-clip-text text-transparent">
+                        Horror / Roblox Creators
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Subscribe and stay up to date with game development, doors horror experiences, custom Roblox dev logs, and fallen entertainment creations.
+                </p>
+
+                <!-- Search & Quick Filter Controls -->
+                <div class="max-w-xl mx-auto space-y-4">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+                        <input type="text" id="searchInput" onkeyup="filterChannels()" placeholder="Search channels, tags, or content..." 
+                               class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-darkCard/90 border border-gray-700/70 text-white placeholder-gray-500 focus:outline-none focus:border-neonPurple focus:ring-2 focus:ring-neonPurple/20 transition-all shadow-lg">
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="flex flex-wrap justify-center gap-2 pt-2">
+                        <button onclick="setCategory('all')" class="cat-btn active px-4 py-1.5 rounded-full text-xs font-semibold bg-neonPurple text-white transition-all">All</button>
+                        <button onclick="setCategory('dev')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all">Game Dev</button>
+                        <button onclick="setCategory('horror')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all">Roblox / Horror</button>
+                        <button onclick="setCategory('studio')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all">Studio & Entertainment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creator Channels Grid -->
+        <section id="channels" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="tv" class="text-neonCyan w-6 h-6"></i> Featured Channels
+                    </h2>
+                    <p class="text-sm text-gray-400">Official YouTube channels & content showcases</p>
+                </div>
+                <span id="channelCount" class="text-xs font-mono bg-gray-800 px-3 py-1 rounded-full text-gray-400 border border-gray-700">3 Channels</span>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="channelGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Channel 1: MrCruel -->
+                <div class="channel-card glass-card rounded-2xl overflow-hidden hover:border-neonCyan/50 transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="dev horror" data-name="mrcruel">
+                    <!-- Banner Graphic -->
+                    <div class="h-32 bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 relative p-4 flex items-end">
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-black/60 text-[10px] font-mono text-neonCyan border border-neonCyan/30 uppercase tracking-widest">Game Developer</span>
+                    </div>
+                    
+                    <!-- Content Body -->
+                    <div class="p-6 pt-0 flex-grow flex flex-col relative">
+                        <!-- Avatar -->
+                        <div class="w-16 h-16 rounded-2xl bg-darkCard border-2 border-neonCyan -mt-8 mb-4 overflow-hidden flex items-center justify-center text-neonCyan shadow-lg font-bold text-2xl bg-gradient-to-br from-gray-800 to-gray-900">
+                            MC
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white group-hover:text-neonCyan transition-colors">MrCruel</h3>
+                        <p class="text-xs font-mono text-gray-400 mb-3">@MrCruel_Dev</p>
+                        
+                        <p class="text-sm text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Game developer showcasing indie development logs, mechanic scripting tutorials, Roblox game creation, and behind-the-scenes progress.
+                        </p>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#GameDev</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#Coding</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#RobloxDev</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800">
+                            <a href="https://www.youtube.com/@MrCruel_Dev?sub_confirmation=1" target="_blank" rel="noopener" 
+                               class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-neonRed hover:bg-red-600 text-white font-semibold text-xs transition-all shadow-red-glow">
+                                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                                <span>Subscribe</span>
+                            </a>
+                            <button onclick="openModal('MrCruel', 'https://www.youtube.com/@MrCruel_Dev', 'MrCruel_Dev')" 
+                                    class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold transition-all border border-gray-700">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Visit Channel</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel 2: Sam -->
+                <div class="channel-card glass-card rounded-2xl overflow-hidden hover:border-neonRed/50 transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="horror" data-name="sam playtime fun doors hell">
+                    <!-- Banner Graphic -->
+                    <div class="h-32 bg-gradient-to-r from-red-950 via-purple-950 to-slate-900 relative p-4 flex items-end">
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-black/60 text-[10px] font-mono text-neonRed border border-neonRed/30 uppercase tracking-widest">Roblox / Horror</span>
+                    </div>
+                    
+                    <!-- Content Body -->
+                    <div class="p-6 pt-0 flex-grow flex flex-col relative">
+                        <!-- Avatar -->
+                        <div class="w-16 h-16 rounded-2xl bg-darkCard border-2 border-neonRed -mt-8 mb-4 overflow-hidden flex items-center justify-center text-neonRed shadow-lg font-bold text-2xl bg-gradient-to-br from-gray-800 to-gray-900">
+                            S
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white transition-colors">Sam</h3>
+                        <p class="text-xs font-mono text-gray-400 mb-3">@PlaytimeFunDoorsHell</p>
+                        
+                        <p class="text-sm text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Specializing in custom Roblox Doors concepts, gameplay videos, horror modes, fan-made entity showcases, and gameplay walkthroughs.
+                        </p>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#RobloxDoors</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#Horror</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#Gaming</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800">
+                            <a href="https://www.youtube.com/@PlaytimeFunDoorsHell?sub_confirmation=1" target="_blank" rel="noopener" 
+                               class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-neonRed hover:bg-red-600 text-white font-semibold text-xs transition-all shadow-red-glow">
+                                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                                <span>Subscribe</span>
+                            </a>
+                            <button onclick="openModal('Sam', 'https://www.youtube.com/@PlaytimeFunDoorsHell', 'PlaytimeFunDoorsHell')" 
+                                    class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold transition-all border border-gray-700">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Visit Channel</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel 3: Dev (Fallen Games) -->
+                <div class="channel-card glass-card rounded-2xl overflow-hidden hover:border-neonPurple/50 transition-all duration-300 hover:-translate-y-1.5 flex flex-col" data-category="studio dev" data-name="dev fallen games entertainment">
+                    <!-- Banner Graphic -->
+                    <div class="h-32 bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 relative p-4 flex items-end">
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-black/60 text-[10px] font-mono text-neonPurple border border-neonPurple/30 uppercase tracking-widest">Entertainment & Studio</span>
+                    </div>
+                    
+                    <!-- Content Body -->
+                    <div class="p-6 pt-0 flex-grow flex flex-col relative">
+                        <!-- Avatar -->
+                        <div class="w-16 h-16 rounded-2xl bg-darkCard border-2 border-neonPurple -mt-8 mb-4 overflow-hidden flex items-center justify-center text-neonPurple shadow-lg font-bold text-2xl bg-gradient-to-br from-gray-800 to-gray-900">
+                            FG
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white transition-colors">Dev</h3>
+                        <p class="text-xs font-mono text-gray-400 mb-3">@FallenGamesEntertainment</p>
+                        
+                        <p class="text-sm text-gray-300 mb-6 leading-relaxed flex-grow">
+                            Official studio updates for Fallen Games Entertainment. Project trailers, game announcements, dev leaks, and full development updates.
+                        </p>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#FallenGames</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#Studio</span>
+                            <span class="px-2 py-0.5 rounded bg-gray-800 text-[11px] text-gray-300">#Trailers</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800">
+                            <a href="https://www.youtube.com/@FallenGamesEntertainment?sub_confirmation=1" target="_blank" rel="noopener" 
+                               class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-neonRed hover:bg-red-600 text-white font-semibold text-xs transition-all shadow-red-glow">
+                                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                                <span>Subscribe</span>
+                            </a>
+                            <button onclick="openModal('Dev (Fallen Games)', 'https://www.youtube.com/@FallenGamesEntertainment', 'FallenGamesEntertainment')" 
+                                    class="flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold transition-all border border-gray-700">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Visit Channel</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- No Search Results State -->
+            <div id="noResults" class="hidden text-center py-16">
+                <i data-lucide="frown" class="w-12 h-12 text-gray-500 mx-auto mb-4"></i>
+                <h3 class="text-lg font-medium text-gray-300">No channels found</h3>
+                <p class="text-sm text-gray-500">Try adjusting your search terms or filter selections.</p>
+            </div>
+        </section>
+
+        <!-- GitHub Pages Hosting Guide Section -->
+        <section id="github-deploy" class="py-16 bg-black/40 border-t border-gray-800/80">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="flex items-center space-x-3 mb-8">
+                    <div class="p-3 bg-neonPurple/10 text-neonPurple rounded-xl border border-neonPurple/30">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">How to Host This Site on GitHub Pages</h2>
+                        <p class="text-sm text-gray-400">Step-by-step instructions to get this page online for free</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 font-mono text-sm">
+                    <!-- Step 1 -->
+                    <div class="p-5 glass-card rounded-2xl border-l-4 border-l-neonCyan">
+                        <h3 class="font-sans font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-neonCyan/20 text-neonCyan text-xs flex items-center justify-center">1</span>
+                            Create a GitHub Repository
+                        </h3>
+                        <p class="font-sans text-gray-300 text-sm mb-3">Go to <a href="https://github.com/new" target="_blank" class="text-neonCyan hover:underline">github.com/new</a> and create a new repository.</p>
+                        <ul class="list-disc list-inside font-sans text-xs text-gray-400 space-y-1">
+                            <li>Name it <code class="bg-gray-800 px-1.5 py-0.5 rounded text-neonCyan">youtube-creator-showcase</code> (or any name you like).</li>
+                            <li>Keep it set to <strong>Public</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-5 glass-card rounded-2xl border-l-4 border-l-neonPurple">
+                        <h3 class="font-sans font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-neonPurple/20 text-neonPurple text-xs flex items-center justify-center">2</span>
+                            Upload This File (`index.html`)
+                        </h3>
+                        <p class="font-sans text-gray-300 text-sm mb-3">Save this generated HTML code locally as <code class="bg-gray-800 px-1.5 py-0.5 rounded text-neonPurple">index.html</code>, then push it to GitHub using Git terminal commands:</p>
+                        
+                        <div class="bg-darkBg p-4 rounded-xl text-gray-300 border border-gray-800 relative group overflow-x-auto">
+                            <code>
+                                git init<br>
+                                git add index.html<br>
+                                git commit -m "Initial creator showcase landing page"<br>
+                                git branch -M main<br>
+                                git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git<br>
+                                git push -u origin main
+                            </code>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-5 glass-card rounded-2xl border-l-4 border-l-neonRed">
+                        <h3 class="font-sans font-bold text-white text-base mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-neonRed/20 text-neonRed text-xs flex items-center justify-center">3</span>
+                            Enable GitHub Pages
+                        </h3>
+                        <ol class="list-decimal list-inside font-sans text-sm text-gray-300 space-y-2">
+                            <li>In your GitHub repo, go to <strong>Settings</strong> &rarr; <strong>Pages</strong> (on the left sidebar).</li>
+                            <li>Under <strong>Branch</strong>, select <code class="bg-gray-800 px-1.5 py-0.5 rounded text-neonRed">main</code> branch and click <strong>Save</strong>.</li>
+                            <li>Wait 1-2 minutes. Your live site URL will be displayed at top: <code class="bg-gray-800 px-1.5 py-0.5 rounded text-neonCyan">https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/</code></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Preview Overlay -->
+    <div id="channelModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-xl w-full rounded-2xl p-6 relative border border-gray-700 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="p-2 bg-neonRed/10 rounded-xl text-neonRed">
+                    <i data-lucide="youtube" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 id="modalTitle" class="text-xl font-bold text-white">Channel View</h3>
+                    <p id="modalHandle" class="text-xs font-mono text-neonCyan"></p>
+                </div>
+            </div>
+
+            <p class="text-sm text-gray-300 mb-6">
+                You are about to navigate to the official YouTube channel page. Click below to continue directly to YouTube in a new tab:
+            </p>
+
+            <div class="space-y-3">
+                <a id="modalDirectLink" href="#" target="_blank" rel="noopener" class="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-neonRed hover:bg-red-600 text-white font-semibold text-sm transition-all shadow-red-glow">
+                    <span>Open Channel on YouTube</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                
+                <button onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-sm font-medium transition-all border border-gray-700">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-8 border-t border-gray-800/80 bg-darkBg text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Nexus Creators & Devs. Static HTML ready for GitHub Pages hosting.</p>
+            <div class="flex space-x-4">
+                <a href="https://www.youtube.com/@MrCruel_Dev" target="_blank" class="hover:text-neonCyan">MrCruel</a>
+                <a href="https://www.youtube.com/@PlaytimeFunDoorsHell" target="_blank" class="hover:text-neonRed">Sam</a>
+                <a href="https://www.youtube.com/@FallenGamesEntertainment" target="_blank" class="hover:text-neonPurple">Dev</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Search Filter Functionality
+        function filterChannels() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.channel-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const nameData = card.getAttribute('data-name');
+                const textContent = card.innerText.toLowerCase();
+
+                if (nameData.includes(query) || textContent.includes(query)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('channelCount').innerText = `${visibleCount} Channels`;
+            document.getElementById('noResults').classList.toggle('hidden', visibleCount > 0);
+        }
+
+        // Category Filter Functionality
+        function setCategory(category) {
+            const cards = document.querySelectorAll('.channel-card');
+            const buttons = document.querySelectorAll('.cat-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-neonPurple', 'text-white');
+                btn.classList.add('bg-gray-800', 'text-gray-300');
+            });
+
+            event.target.classList.remove('bg-gray-800', 'text-gray-300');
+            event.target.classList.add('bg-neonPurple', 'text-white');
+
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const categories = card.getAttribute('data-category').split(' ');
+                if (category === 'all' || categories.includes(category)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('channelCount').innerText = `${visibleCount} Channels`;
+            document.getElementById('noResults').classList.toggle('hidden', visibleCount > 0);
+        }
+
+        // Modal Logic
+        function openModal(title, link, handle) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalHandle').innerText = '@' + handle;
+            document.getElementById('modalDirectLink').href = link;
+            document.getElementById('channelModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('channelModal').classList.add('hidden');
+        }
+
+        // Close Modal when clicking outside container
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('channelModal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
